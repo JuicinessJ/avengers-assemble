@@ -1,9 +1,8 @@
-const { default: inquirer } = require('inquirer');
-const employee = require('./employee');
+const Employee = require('./employee');
 
-class engineer extends employee {
+class Engineer extends Employee {
     constructor(github) {
-        super(name, id, email) // fill in engineer name and email somehow, inquirer or html?
+        super(name, id, email)
         this.github = github;
     };
 
@@ -16,4 +15,4 @@ class engineer extends employee {
     };
 };
 
-module.exports = engineer;
+module.exports = Engineer;

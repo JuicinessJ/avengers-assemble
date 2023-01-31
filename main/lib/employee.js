@@ -1,9 +1,4 @@
-const inquirer = require("inquirer");
-const engineer = require('./engineer');
-const intern = require('./intern');
-const manager = require('./manager');
-
-class employee {
+class Employee {
     constructor(name, id, email) {
         this.name = name;
         this.id = id;
@@ -27,4 +22,4 @@ class employee {
     };
 };
 
-module.exports = employee;
+module.exports = Employee;
