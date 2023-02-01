@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 const Engineer = require('./lib/engineer');
 const Manager = require('./lib/manager');
 const Intern = require('./lib/intern');
-const { writeFile, write } = require('fs');
+const { writeFile } = require('fs');
 const generateHTML = require('./src/generateHTML');
 
 const employee = [];
