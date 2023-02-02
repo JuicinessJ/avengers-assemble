@@ -1,8 +1,12 @@
+let x = 0;
+
 function addCard(employee) {
-    switch(employee.toDo) {
-        case 'Add a Engineer':
+    console.log('bye1')
+    switch(true) {
+        case employee['Engineer']:
             //create engineer card
-            console.log('hello')
+            console.log('hello1bn')
+            x++;
             return `<div class="col mb-4">
                         <div class="card h-100">
                             <div class="card-header">Engineer</div>
@@ -17,8 +21,9 @@ function addCard(employee) {
                         </div>
                     </div>`
             break;
-        case 'Add a Intern':
+        case 'Intern':
             //create intern card
+            x++;
             return `<div class="col mb-4">
                         <div class="card h-100">
                             <div class="card-header">Intern</div>
@@ -33,8 +38,9 @@ function addCard(employee) {
                         </div>
                     </div>`
             break;
-        case 'Add a Manager':
+        case 'Manager':
             //create manager card
+            x++;
             return `<div class="col mb-4">
                         <div class="card h-100">
                             <div class="card-header">Manager</div>
@@ -54,7 +60,7 @@ function addCard(employee) {
 
 
 function generateHTML(employee) {
-    console.log(addCard)
+    console.log(employee[x])
     return `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -72,7 +78,7 @@ function generateHTML(employee) {
         </div>
         <div class="container">
             <div class="row row-cols-1 row-cols-md-3 justify-content-center">
-                ${addCard}
+                ${addCard(employee)}
             </div>
         </div>
     </body>
