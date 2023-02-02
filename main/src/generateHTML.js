@@ -1,28 +1,61 @@
-//may need another function in here to generate cards if add employee is triggered in which takes another trigger of add certain role in which
-//it make a new box curated for that role.
-//function addCard(role) {
-    /*switch(if role === true) {
-        case 'Add a Engineer or IF Engineer = True':
-            Create new card for engineer
+function addCard(employee) {
+    switch(employee.toDo) {
+        case 'Add a Engineer':
+            //create engineer card
+            console.log('hello')
+            return `<div class="col mb-4">
+                        <div class="card h-100">
+                            <div class="card-header">Engineer</div>
+                            <p id='name'>Name</p>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">ID</li>
+                                    <li class="list-group-item">Email</li>
+                                    <li class="list-group-item">GitHub</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>`
             break;
-        case 'Add a Intern or IF Intern = True':
-            Create new card for Intern
+        case 'Add a Intern':
+            //create intern card
+            return `<div class="col mb-4">
+                        <div class="card h-100">
+                            <div class="card-header">Intern</div>
+                            <p id='name'>Name</p>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">ID</li>
+                                    <li class="list-group-item">Email</li>
+                                    <li class="list-group-item">School</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>`
             break;
-        case 'Add a Manager or IF Manager = True':
-            Create new card for Manager
+        case 'Add a Manager':
+            //create manager card
+            return `<div class="col mb-4">
+                        <div class="card h-100">
+                            <div class="card-header">Manager</div>
+                            <p id='name'>Name</p>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">ID</li>
+                                    <li class="list-group-item">Email</li>
+                                    <li class="list-group-item">OfficeNumber</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>`
             break;
-        default:
-            Write?
-    }*/
-//}
+    }
+}
 
 
-
-
-
-function generateHTML(data) {
-    return 
-    `<!DOCTYPE html>
+function generateHTML(employee) {
+    console.log(addCard)
+    return `<!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -38,15 +71,13 @@ function generateHTML(data) {
             </div>
         </div>
         <div class="container">
-
-// need to add remainder of code from HTML with some placeholders.
-
-
+            <div class="row row-cols-1 row-cols-md-3 justify-content-center">
+                ${addCard}
+            </div>
         </div>
     </body>
     </html>`;
 }
-
 
 
 module.exports = generateHTML;
