@@ -5,7 +5,7 @@ const Intern = require('./lib/intern');
 const { writeFile } = require('fs');
 const generateHTML = require('./src/generateHTML');
 
-const employee = [];
+const userEntry = [];
 
 function reRun() {
     inquirer.prompt([
@@ -42,7 +42,8 @@ function reRun() {
                     ])
                     .then((answer) => {
                         let engineer = new Engineer(answer.name, answer.id, answer.email, answer.github);
-                        employee.push(engineer);
+                        userEntry.push(engineer);
+                        console.log('bye')
                         reRun()
                     })
                     break;
@@ -71,7 +72,7 @@ function reRun() {
                     ])
                     .then((answer) => {
                         let intern = new Intern(answer.name, answer.id, answer.email, answer.school);
-                        employee.push(intern);
+                        userEntry.push(intern);
                         reRun()
                     })
                     break;
@@ -100,12 +101,13 @@ function reRun() {
                     ])
                     .then((answer) => {
                         let manager = new Manager(answer.name, answer.id, answer.email, answer.officeNumber);
-                        employee.push(manager);
+                        userEntry.push(manager);
                         reRun()
                     })
                     break;
                 default:
-                    writeFile('index.html', generateHTML(employee))
+                    console.log('hello')
+                    writeFile('index.html', generateHTML(userEntry))
             }
         })
 }

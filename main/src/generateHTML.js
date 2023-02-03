@@ -1,12 +1,9 @@
-let x = 0;
-
-function addCard(employee) {
-    console.log('bye1')
-    switch(true) {
-        case employee['Engineer']:
+function addCard(employeeList) {
+    //create for loop
+for (let i = 0; i < employeeList.length; i++) {
+    switch(employeeList[i].getRole()) {
+        case 'Engineer':
             //create engineer card
-            console.log('hello1bn')
-            x++;
             return `<div class="col mb-4">
                         <div class="card h-100">
                             <div class="card-header">Engineer</div>
@@ -23,7 +20,6 @@ function addCard(employee) {
             break;
         case 'Intern':
             //create intern card
-            x++;
             return `<div class="col mb-4">
                         <div class="card h-100">
                             <div class="card-header">Intern</div>
@@ -40,7 +36,6 @@ function addCard(employee) {
             break;
         case 'Manager':
             //create manager card
-            x++;
             return `<div class="col mb-4">
                         <div class="card h-100">
                             <div class="card-header">Manager</div>
@@ -56,11 +51,12 @@ function addCard(employee) {
                     </div>`
             break;
     }
+    }
 }
 
 
-function generateHTML(employee) {
-    console.log(employee[x])
+function generateHTML(team) {
+    // console.log(employee)
     return `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -78,7 +74,7 @@ function generateHTML(employee) {
         </div>
         <div class="container">
             <div class="row row-cols-1 row-cols-md-3 justify-content-center">
-                ${addCard(employee)}
+                ${addCard(team)}
             </div>
         </div>
     </body>
