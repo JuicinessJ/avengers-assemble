@@ -1,62 +1,65 @@
 function addCard(employeeList) {
-    //create for loop
-for (let i = 0; i < employeeList.length; i++) {
-    switch(employeeList[i].getRole()) {
-        case 'Engineer':
-            //create engineer card
-            return `<div class="col mb-4">
-                        <div class="card h-100">
-                            <div class="card-header">Engineer</div>
-                            <p id='name'>Name</p>
-                            <div class="card-body">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">ID</li>
-                                    <li class="list-group-item">Email</li>
-                                    <li class="list-group-item">GitHub</li>
-                                </ul>
+    for (let i = 0; i < employeeList.length; i++) {
+        switch(employeeList[i].getRole()) {
+            case 'Engineer':
+                //create engineer card
+                console.log('1')
+                return `<div class="col mb-4">
+                            <div class="card h-100">
+                                <div class="card-header">Engineer</div>
+                                <p id='name'>${employeeList[i].name}</p>
+                                <div class="card-body">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">ID: ${employeeList[i].id}</li>
+                                        <li class="list-group-item">Email: ${employeeList[i].email}</li>
+                                        <li class="list-group-item">GitHub: ${employeeList[i].github}</li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                    </div>`
-            break;
-        case 'Intern':
-            //create intern card
-            return `<div class="col mb-4">
-                        <div class="card h-100">
-                            <div class="card-header">Intern</div>
-                            <p id='name'>Name</p>
-                            <div class="card-body">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">ID</li>
-                                    <li class="list-group-item">Email</li>
-                                    <li class="list-group-item">School</li>
-                                </ul>
+                        </div>`;
+                break;
+            case 'Intern':
+                //create intern card
+                console.log('2')
+                return `<div class="col mb-4">
+                            <div class="card h-100">
+                                <div class="card-header">Intern</div>
+                                <p id='name'>${employeeList[i].name}</p>
+                                <div class="card-body">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">ID: ${employeeList[i].id}</li>
+                                        <li class="list-group-item">Email: ${employeeList[i].email}</li>
+                                        <li class="list-group-item">School: ${employeeList[i].school}</li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                    </div>`
-            break;
-        case 'Manager':
-            //create manager card
-            return `<div class="col mb-4">
-                        <div class="card h-100">
-                            <div class="card-header">Manager</div>
-                            <p id='name'>Name</p>
-                            <div class="card-body">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">ID</li>
-                                    <li class="list-group-item">Email</li>
-                                    <li class="list-group-item">OfficeNumber</li>
-                                </ul>
+                        </div>`;
+                break;
+            case 'Manager':
+                //create manager card
+                console.log('3')
+                return `<div class="col mb-4">
+                            <div class="card h-100">
+                                <div class="card-header">Manager</div>
+                                <p id='name'>${employeeList[i].name}</p>
+                                <div class="card-body">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">ID: ${employeeList[i].id}</li>
+                                        <li class="list-group-item">Email: ${employeeList[i].email}</li>
+                                        <li class="list-group-item">OfficeNumber: ${employeeList[i].officeNumber}</li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                    </div>`
-            break;
-    }
+                        </div>`;
+                break;
+            default:
+                return "";
+        }
     }
 }
 
 
 function generateHTML(team) {
-    // console.log(employee)
     return `<!DOCTYPE html>
     <html lang="en">
     <head>

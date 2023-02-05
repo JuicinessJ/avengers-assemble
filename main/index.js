@@ -43,7 +43,6 @@ function reRun() {
                     .then((answer) => {
                         let engineer = new Engineer(answer.name, answer.id, answer.email, answer.github);
                         userEntry.push(engineer);
-                        console.log('bye')
                         reRun()
                     })
                     break;
@@ -106,7 +105,6 @@ function reRun() {
                     })
                     break;
                 default:
-                    console.log('hello')
                     writeFile('index.html', generateHTML(userEntry))
             }
         })
