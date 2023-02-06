@@ -1,10 +1,12 @@
 function addCard(employeeList) {
+    let x = [];
     for (let i = 0; i < employeeList.length; i++) {
+        console.log("here")
         switch(employeeList[i].getRole()) {
             case 'Engineer':
                 //create engineer card
                 console.log('1')
-                return `<div class="col mb-4">
+                x.push(`<div class="col mb-4">
                             <div class="card h-100">
                                 <div class="card-header">Engineer</div>
                                 <p id='name'>${employeeList[i].name}</p>
@@ -16,12 +18,12 @@ function addCard(employeeList) {
                                     </ul>
                                 </div>
                             </div>
-                        </div>`;
+                        </div>`);
                 break;
             case 'Intern':
                 //create intern card
                 console.log('2')
-                return `<div class="col mb-4">
+                x.push(`<div class="col mb-4">
                             <div class="card h-100">
                                 <div class="card-header">Intern</div>
                                 <p id='name'>${employeeList[i].name}</p>
@@ -33,12 +35,12 @@ function addCard(employeeList) {
                                     </ul>
                                 </div>
                             </div>
-                        </div>`;
+                        </div>`);
                 break;
             case 'Manager':
                 //create manager card
                 console.log('3')
-                return `<div class="col mb-4">
+                x.push(`<div class="col mb-4">
                             <div class="card h-100">
                                 <div class="card-header">Manager</div>
                                 <p id='name'>${employeeList[i].name}</p>
@@ -50,12 +52,11 @@ function addCard(employeeList) {
                                     </ul>
                                 </div>
                             </div>
-                        </div>`;
+                        </div>`);
                 break;
-            default:
-                return "";
         }
     }
+    return x.join('');
 }
 
 

@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 const Engineer = require('./lib/engineer');
 const Manager = require('./lib/manager');
 const Intern = require('./lib/intern');
-const { writeFile } = require('fs');
+const fs = require('fs');
 const generateHTML = require('./src/generateHTML');
 
 const userEntry = [];
@@ -105,7 +105,7 @@ function reRun() {
                     })
                     break;
                 default:
-                    writeFile('index.html', generateHTML(userEntry))
+                    fs.writeFileSync('index.html', generateHTML(userEntry), 'utf-8')
             }
         })
 }
